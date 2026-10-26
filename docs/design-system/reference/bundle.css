@@ -1,0 +1,115 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500&family=Lexend:wght@300;400;500&display=swap");
+
+/* Lime Health components — every value comes from tokens.css */
+.lh, .lh * { box-sizing: border-box; }
+.lh { font-family: var(--font-ui); color: var(--text); }
+
+/* Circle button */
+.lh-circle { width: var(--size-circle); height: var(--size-circle); border-radius: var(--radius-pill); border: 0; display: inline-grid; place-items: center; background: var(--surface-card); color: var(--text); cursor: pointer; transition: transform .15s, background-color .15s; }
+.lh-circle svg { width: 20px; height: 20px; stroke: currentColor; fill: none; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
+.lh-circle--sm { width: var(--size-circle-sm); height: var(--size-circle-sm); }
+.lh-circle--lg { width: var(--size-circle-lg); height: var(--size-circle-lg); }
+.lh-circle--ink { background: var(--action); color: var(--on-action); }
+.lh-circle--lime { background: var(--lime); color: var(--on-lime); }
+.lh-circle--subtle { background: var(--surface-subtle); }
+.lh-circle--outline { background: transparent; box-shadow: inset 0 0 0 1px var(--line); }
+.lh-circle:active, .lh-btn:active { transform: scale(.96); }
+.lh-circle:focus-visible, .lh-btn:focus-visible, .lh-seg button:focus-visible, .lh-search input:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
+.lh-badge { position: relative; }
+.lh-badge::after { content: ""; position: absolute; top: 9px; right: 9px; width: 8px; height: 8px; border-radius: var(--radius-pill); background: var(--danger); }
+
+/* Pill button */
+.lh-btn { height: var(--size-control); padding: 0 var(--space-6); border-radius: var(--radius-pill); border: 0; display: inline-flex; align-items: center; gap: var(--space-2); font: 500 15px/1 var(--font-ui); cursor: pointer; transition: transform .15s, background-color .15s; }
+.lh-btn--lime { background: var(--lime); color: var(--on-lime); }
+.lh-btn--lime:hover { background: var(--lime-press); }
+.lh-btn--ink { background: var(--action); color: var(--on-action); }
+.lh-btn--outline { background: transparent; color: var(--text); box-shadow: inset 0 0 0 1px var(--line); }
+.lh-btn--sm { height: 36px; padding: 0 var(--space-4); font-size: 13px; }
+
+/* Chips */
+.lh-chip { display: inline-flex; align-items: center; gap: var(--space-2); height: 30px; padding: 0 var(--space-3); border-radius: var(--radius-pill); background: var(--surface-subtle); color: var(--text); font: 400 12px/1 var(--font-ui); white-space: nowrap; }
+.lh-chip--lime { background: var(--lime); color: var(--on-lime); }
+.lh-chip--ink { background: var(--action); color: var(--on-action); }
+.lh-chip--outline { background: transparent; box-shadow: inset 0 0 0 1px currentColor; }
+.lh-dot { width: 6px; height: 6px; border-radius: var(--radius-pill); background: var(--success); }
+.lh-check { display: inline-flex; align-items: center; gap: var(--space-2); font: 400 12px/1.2 var(--font-ui); color: var(--text-muted); }
+.lh-check i { width: 28px; height: 28px; border-radius: var(--radius-pill); background: var(--lime); color: var(--on-lime); display: grid; place-items: center; font-style: normal; font-size: 13px; }
+
+/* Squiggle */
+.lh-squiggle { display: block; width: 26px; height: 6px; color: var(--text); }
+.lh-squiggle path { fill: none; stroke: currentColor; stroke-width: 1.3; }
+
+/* Meter: stripes = used, dots = remaining */
+.lh-meter { display: flex; height: 56px; border-radius: var(--radius-pill); overflow: hidden; background: var(--surface-subtle); }
+.lh-meter__used { background: repeating-linear-gradient(90deg, var(--meter-mark) 0 2px, transparent 2px 6px); border-radius: var(--radius-pill); }
+.lh-meter__rest { flex: 1; background: radial-gradient(var(--meter-mark) 1px, transparent 1.3px) 0 0 / 7px 7px; }
+.lh-meter--sm { height: 36px; }
+
+/* Stat */
+.lh-stat__label { font: 400 10px/1.2 var(--font-ui); color: var(--text-muted); }
+.lh-stat__value { font: 400 22px/1.1 var(--font-ui); letter-spacing: -.01em; font-variant-numeric: tabular-nums; }
+.lh-cur { font-size: .55em; color: var(--text-muted); margin-right: 2px; vertical-align: .15em; }
+
+/* Cards */
+.lh-card { background: var(--surface-card); border-radius: var(--radius-card); padding: var(--space-5); display: flex; flex-direction: column; gap: var(--space-3); }
+.lh-card--lime { background: var(--lime); color: var(--on-lime); }
+.lh-card--lime .lh-cur, .lh-card--lime .lh-stat__label, .lh-card--lime .lh-muted { color: var(--on-lime); opacity: .7; }
+.lh-panel { background: var(--surface-panel); border-radius: var(--radius-sheet); padding: var(--space-2); display: flex; flex-direction: column; gap: var(--space-2); }
+.lh-row { display: flex; align-items: center; justify-content: space-between; gap: var(--space-3); }
+.lh-name { font: 400 28px/1.05 var(--font-ui); letter-spacing: -.01em; margin: 0; }
+.lh-num { font: 400 36px/1 var(--font-ui); letter-spacing: -.02em; font-variant-numeric: tabular-nums; }
+.lh-muted { color: var(--text-muted); }
+.lh-hint { font: 400 10px/1.2 var(--font-ui); color: var(--text-subtle); text-align: center; }
+.lh-label { font: 400 12px/1.33 var(--font-ui); color: var(--text-muted); }
+.lh-stack-olive { position: relative; }
+.lh-stack-olive::before { content: ""; position: absolute; inset: 0 auto 0 -14px; width: 40px; background: var(--olive); border-radius: var(--radius-card) 0 0 var(--radius-card); z-index: -1; }
+
+/* Service tile */
+.lh-tiles { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-1\.5); }
+.lh-tile { height: 150px; border-radius: var(--radius-card); background: var(--surface-card); padding: var(--space-4); display: flex; flex-direction: column; justify-content: space-between; }
+.lh-tile .lh-circle { align-self: flex-end; }
+.lh-tile b { font: 400 19px/1.05 var(--font-ui); }
+.lh-tile--lime { background: var(--lime); color: var(--on-lime); }
+
+/* Segmented tabs */
+.lh-seg { display: flex; padding: 5px; gap: 4px; border-radius: var(--radius-pill); background: var(--lime); }
+.lh-seg button { flex: 1; height: 44px; border: 0; border-radius: var(--radius-pill); background: transparent; color: var(--on-lime); font: 400 14px/1 var(--font-ui); cursor: pointer; }
+.lh-seg button[aria-selected="true"] { background: var(--surface-card); color: var(--text); }
+.lh-seg--grey { background: var(--surface-subtle); }
+.lh-seg--grey button { color: var(--text-muted); }
+
+/* Bottom nav */
+.lh-nav { display: inline-flex; align-items: center; gap: var(--space-1\.5); padding: var(--space-1); border-radius: var(--radius-pill); }
+.lh-nav .lh-circle { width: var(--size-circle-lg); height: var(--size-circle-lg); box-shadow: var(--shadow-float); }
+.lh-nav .lh-circle--ink { width: 62px; height: 62px; }
+
+/* Search */
+.lh-search { display: flex; align-items: center; gap: var(--space-1); height: var(--size-control); padding: 4px 4px 4px var(--space-5); border-radius: var(--radius-pill); background: var(--surface-subtle); }
+.lh-search input { flex: 1; min-width: 0; height: 100%; border: 0; background: transparent; color: var(--text); font: 400 13px/1 var(--font-ui); border-radius: var(--radius-pill); }
+.lh-search input::placeholder { color: var(--text-muted); }
+.lh-search input + input { border-left: 1px solid var(--line); padding-left: var(--space-4); border-radius: 0; }
+.lh-search .lh-btn { height: 44px; }
+.lh-search--lime { background: var(--lime); color: var(--on-lime); padding: 0 var(--space-5); gap: var(--space-3); font: 400 14px/1 var(--font-ui); display: inline-flex; }
+
+/* Chat */
+.lh-chat { display: flex; flex-direction: column; gap: var(--space-3); }
+.lh-msg { max-width: 260px; padding: var(--space-4); border-radius: var(--radius-md); background: var(--surface-card); font: 400 13px/1.45 var(--font-ui); }
+.lh-msg--out { align-self: flex-end; }
+.lh-msg--lime { background: var(--lime); color: var(--on-lime); }
+.lh-time { font: 400 10px/1 var(--font-ui); color: var(--text-muted); text-align: center; }
+.lh-composer { display: flex; align-items: center; gap: var(--space-2); height: var(--size-control); padding: 4px; border-radius: var(--radius-pill); background: var(--surface-card); }
+.lh-composer input { flex: 1; min-width: 0; border: 0; background: transparent; color: var(--text); font: 400 13px/1 var(--font-ui); }
+.lh-composer input::placeholder { color: var(--text-muted); }
+
+/* Photo caption card */
+.lh-photo { position: relative; overflow: hidden; border-radius: var(--radius-block); background: var(--surface-panel); }
+.lh-caption { position: absolute; inset: auto 0 0 0; padding: var(--space-6); color: var(--on-ink); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); background: rgba(10,10,10,.28); border-radius: var(--radius-block) var(--radius-block) 0 0; }
+.lh-caption h3 { margin: var(--space-8) 0 0; font: 500 44px/1 var(--font-display); letter-spacing: -.045em; }
+
+/* Face-pill headline */
+.lh-headline { margin: 0; font: 500 64px/.98 var(--font-display); letter-spacing: -.05em; text-wrap: balance; }
+.lh-face { display: inline-block; width: 1.55em; height: .86em; border-radius: var(--radius-pill); background-color: var(--lime); background-size: cover; background-position: center; vertical-align: -.1em; }
+
+@media (prefers-reduced-motion: reduce) { .lh-circle, .lh-btn { transition: none; } }
+.lh-card--lime .lh-squiggle, .lh-tile--lime .lh-squiggle { color: var(--on-lime); }
+.lh-card--lime .lh-circle--ink, .lh-tile--lime .lh-circle--ink, .lh-msg--lime .lh-circle--ink { background: var(--ink); color: var(--on-ink); }

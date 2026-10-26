@@ -1,0 +1,100 @@
+import type { Staff, WorkDay } from '@/modules/staff/types';
+import type { UserRecord } from '@/modules/auth/types';
+import { d } from '../helpers';
+
+const days = (weekdays: number[], start: string, end: string, breakStart?: string, breakEnd?: string): WorkDay[] =>
+  weekdays.map((weekday) => ({ weekday, start, end, breakStart, breakEnd }));
+
+export const staffSeed: Staff[] = [
+  {
+    id: 's1',
+    fullName: 'Aziz Rahimov',
+    position: 'DOCTOR',
+    specialty: 'Terapevt',
+    phone: '+998901112233',
+    color: 'primary',
+    isActive: true,
+    schedule: days([1, 2, 3, 4, 5], '09:00', '18:00', '13:00', '14:00'),
+    timeOff: [],
+  },
+  {
+    id: 's2',
+    fullName: 'Nilufar Karimova',
+    position: 'DOCTOR',
+    specialty: 'Ortoped',
+    phone: '+998935554411',
+    color: 'info',
+    isActive: true,
+    schedule: days([1, 3, 5], '10:00', '19:00'),
+    timeOff: [],
+  },
+  {
+    id: 's3',
+    fullName: 'Jasur Toshmatov',
+    position: 'DOCTOR',
+    specialty: 'Xirurg',
+    phone: '+998977001122',
+    color: 'warning',
+    isActive: true,
+    schedule: days([2, 4, 6], '09:00', '16:00'),
+    timeOff: [{ from: d(1), to: d(3), reason: "Yillik ta’til" }],
+  },
+  {
+    id: 's4',
+    fullName: 'Madina Aliyeva',
+    position: 'DOCTOR',
+    specialty: 'Bolalar stomatologi',
+    phone: '+998908887766',
+    color: 'success',
+    isActive: true,
+    schedule: days([1, 2, 3, 4, 5, 6], '09:00', '15:00'),
+    timeOff: [],
+  },
+  {
+    id: 's7',
+    fullName: 'Kamola Nazarova',
+    position: 'DOCTOR',
+    specialty: 'Ortodont',
+    phone: '+998903334455',
+    color: 'danger',
+    isActive: true,
+    schedule: days([1, 2, 3, 4, 5, 6], '09:00', '17:00', '13:00', '14:00'),
+    timeOff: [],
+  },
+  {
+    id: 's5',
+    fullName: 'Dilshod Ergashev',
+    position: 'ADMIN',
+    phone: '+998901000001',
+    color: 'neutral',
+    isActive: true,
+    schedule: [],
+    timeOff: [],
+  },
+  {
+    id: 's6',
+    fullName: 'Gulnora Saidova',
+    position: 'RECEPTIONIST',
+    phone: '+998901000002',
+    color: 'neutral',
+    isActive: true,
+    schedule: [],
+    timeOff: [],
+  },
+  { id: 's8', fullName: 'Bahrom Qodirov', position: 'OWNER', phone: '+998901000003', color: 'neutral', isActive: true, schedule: [], timeOff: [] },
+  { id: 's9', fullName: 'Malika Usmonova', position: 'ASSISTANT', phone: '+998901000004', color: 'neutral', isActive: true, schedule: [], timeOff: [] },
+  { id: 's10', fullName: 'Sardor Yusupov', position: 'CASHIER', phone: '+998901000005', color: 'neutral', isActive: true, schedule: [], timeOff: [] },
+  { id: 's11', fullName: 'Rustam Karimov', position: 'STOREKEEPER', phone: '+998901000006', color: 'neutral', isActive: true, schedule: [], timeOff: [] },
+];
+
+export const usersSeed: UserRecord[] = [
+  { id: 'u1', username: 'admin', role: 'ADMIN', staffId: 's5', isActive: true, password: '123456' },
+  { id: 'u2', username: 'dr.aziz', role: 'DOCTOR', staffId: 's1', isActive: true, password: '123456' },
+  { id: 'u3', username: 'dr.nilufar', role: 'DOCTOR', staffId: 's2', isActive: true, password: '123456' },
+  { id: 'u5', username: 'dr.kamola', role: 'DOCTOR', staffId: 's7', isActive: true, password: '123456' },
+  { id: 'u4', username: 'reception', role: 'RECEPTIONIST', staffId: 's6', isActive: true, password: '123456' },
+  { id: 'u6', username: 'owner', role: 'OWNER', staffId: 's8', isActive: true, password: '123456' },
+  { id: 'u7', username: 'assistant', role: 'ASSISTANT', staffId: 's9', isActive: true, password: '123456' },
+  { id: 'u8', username: 'kassa', role: 'CASHIER', staffId: 's10', isActive: true, password: '123456' },
+  { id: 'u9', username: 'ombor', role: 'STOREKEEPER', staffId: 's11', isActive: true, password: '123456' },
+];

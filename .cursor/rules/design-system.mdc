@@ -1,0 +1,15 @@
+---
+description: Lime Health dizayn tizimi — UI fayllari (sahifa, komponent, stil, tema, ikonka) bilan ishlaganda
+globs: src/**/*.tsx,src/**/*.css,src/shared/theme/**,src/shared/icons/**
+alwaysApply: false
+---
+
+Bu loyihada barcha UI Lime Health dizayn tizimiga bo'ysunadi. Kod yozishdan oldin to'liq qoidalarni o'qing:
+
+@docs/design-system/README.md
+
+Komponent bo'yicha batafsil: @docs/design-system/reference/components.md
+
+Qisqa eslatma: tokenlar faqat `src/shared/theme/tokens.ts` / `src/styles/variables.css`; antd mavzusi global;
+ikonkalar faqat `@/shared/icons`; lime — sirt, matn emas, qatorda bitta; kartalar panel ustida oq, soyasiz;
+bold, gradient, blur yo'q. Ishdan keyin: `npm run typecheck && npm run check:design && npx oxlint src`.

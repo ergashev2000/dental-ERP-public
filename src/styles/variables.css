@@ -1,0 +1,105 @@
+/* Lime Health — tokens.ts bilan qo'lda sinxron. Tailwind'ning standart palitrasi o'chirilgan —
+   faqat shu tokenlar ishlatiladi (bg-surface, text-muted, bg-lime, bg-panel ...).
+   Qoidalar: docs/design-system/README.md */
+@theme {
+  --color-*: initial;
+  --color-transparent: transparent;
+  --color-current: currentColor;
+
+  /* Brend — aksent yumshoq yalpiz (nomlar tarixiy: lime = yalpiz; tokens.ts izohiga qarang) */
+  --color-lime: #A8DDBF;
+  --color-lime-press: #8FD0AD;
+  --color-lime-soft: #E6F4EC;
+  --color-olive: #4E8A6C;
+  --color-on-lime: #0A0A0A;
+  --color-on-ink: #FFFFFF;
+  --color-focus: #0A0A0A;
+
+  /* Sirtlar */
+  --color-surface: #FFFFFF;
+  --color-canvas: #FFFFFF;
+  --color-panel: #F2F2F2;
+  --color-subtle: #EBEBEB;
+  --color-subtle-strong: #DDDDDD;
+  --color-sidebar: #34504D; /* sidebar foni — sokin kulrang-yashil (tokens.ts brand.sidebar) */
+  --color-line: #D4D4D4;
+  --color-line-soft: #EBEBEB;
+
+  /* Matn */
+  --color-ink: #0A0A0A;
+  --color-muted: #5C5C5C;
+  --color-hint: #767676;
+  --color-on-dark: #FFFFFF;
+  --color-on-dark-muted: rgba(255, 255, 255, 0.68); /* qora sidebar: ikkilamchi matn, ikonka */
+  --color-on-dark-subtle: rgba(255, 255, 255, 0.12); /* qora sidebar: karta, hover */
+
+  /* Eski shkala nomlari — Lime Health qiymatlari (tokens.ts `palette`) */
+  --color-primary-50: #E6F4EC;
+  --color-primary-100: #CFEBDB;
+  --color-primary-200: #A8DDBF;
+  --color-primary-300: #8FD0AD;
+  --color-primary-400: #4E8A6C;
+  --color-primary-500: #0A0A0A;
+  --color-primary-600: #0A0A0A;
+  --color-primary-700: #0A0A0A;
+  --color-primary-800: #1C1C1C;
+  --color-primary-900: #0A0A0A;
+
+  --color-neutral-0: #FFFFFF;
+  --color-neutral-25: #F7F7F7;
+  --color-neutral-50: #F2F2F2;
+  --color-neutral-100: #EBEBEB;
+  --color-neutral-200: #DDDDDD;
+  --color-neutral-300: #D4D4D4;
+  --color-neutral-400: #767676;
+  --color-neutral-500: #5C5C5C;
+  --color-neutral-600: #474747;
+  --color-neutral-700: #333333;
+  --color-neutral-800: #1C1C1C;
+  --color-neutral-900: #0A0A0A;
+
+  --color-success: #187A41;  --color-success-soft: #E3F1E8;
+  --color-warning: #8F6400;  --color-warning-soft: #FFF1CC;
+  --color-danger:  #B3261E;  --color-danger-soft:  #FBE7E5;
+  --color-info:    #2F5F8A;  --color-info-soft:    #E4EDF5;
+
+  /* Shakl: hamma narsa yumaloq yoki doira. xs — zich elementlar (kalendar bloki) */
+  --radius-xs: 10px;
+  --radius-sm: 16px;
+  --radius-md: 24px;
+  --radius-lg: 32px;
+  --radius-card: 32px;
+  --radius-sheet: 40px;
+  --radius-block: 48px;
+  --radius-pill: 999px;
+
+  /* Yagona soya — suzuvchi elementlar. Paneldagi kartalar soyasiz */
+  --shadow-card: none;
+  --shadow-float: 0 12px 32px -12px rgba(0, 0, 0, 0.28);
+
+  --font-sans: 'Lexend', system-ui, sans-serif;
+  --font-display: 'Inter Tight', 'Helvetica Neue', Arial, sans-serif;
+
+  /* Hech qachon bold emas: og'irliklar 300–500 */
+  --font-weight-semibold: 500;
+  --font-weight-bold: 500;
+  --font-weight-extrabold: 500;
+
+  /* Tip shkalasi: label 12 · body-sm 14 · body 16 · title 22 · title-stack 28 · numeral 36 */
+  --text-xs: 12px;
+  --text-xs--line-height: 16px;
+  --text-sm: 14px;
+  --text-sm--line-height: 20px;
+  --text-base: 16px;
+  --text-base--line-height: 24px;
+  --text-lg: 18px;
+  --text-lg--line-height: 24px;
+  --text-xl: 22px;
+  --text-xl--line-height: 26px;
+  --text-2xl: 28px;
+  --text-2xl--line-height: 30px;
+  --text-3xl: 36px;
+  --text-3xl--line-height: 36px;
+  --text-4xl: 40px;
+  --text-4xl--line-height: 41px;
+}

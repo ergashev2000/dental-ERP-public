@@ -1,0 +1,30 @@
+export const ROUTES = {
+  login: '/login',
+  dashboard: '/',
+  appointments: '/appointments',
+  newAppointment: '/appointments/new',
+  patients: '/patients',
+  patient: (id: string) => `/patients/${id}`,
+  /** Qabul sahifasi — shifokor bemor bilan ishlaydigan joy */
+  visit: (appointmentId: string) => `/visit/${appointmentId}`,
+  ortho: '/orthodontics',
+  /** Tish texnikiga buyurtmalar */
+  lab: '/lab',
+  orthoCase: (id: string) => `/orthodontics/${id}`,
+  billing: '/billing',
+  inventory: '/inventory',
+  reminders: '/reminders',
+  reports: '/reports',
+  settings: '/settings',
+  /** Sozlamalar bo'limi sahifalari */
+  settingsClinic: '/settings/clinic',
+  settingsChairs: '/settings/chairs',
+  settingsBranches: '/settings/branches',
+  services: '/settings/services',
+  staff: '/settings/staff',
+  settingsUsers: '/settings/users',
+  settingsRoles: '/settings/roles',
+  settingsPayments: '/settings/payments',
+  settingsReceipt: '/settings/receipt',
+  forbidden: '/403',
+} as const;

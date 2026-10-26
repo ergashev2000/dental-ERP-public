@@ -1,0 +1,23 @@
+/** Barcha react-query kalitlari. Birinchi element — modul (invalidatsiya uchun). */
+export const QUERY_KEYS = {
+  auth: ['auth'] as const,
+  dashboard: ['dashboard'] as const,
+  notifications: ['notifications'] as const,
+  appointments: ['appointments'] as const,
+  patients: ['patients'] as const,
+  chart: ['chart'] as const,
+  treatments: ['treatments'] as const,
+  services: ['services'] as const,
+  billing: ['billing'] as const,
+  inventory: ['inventory'] as const,
+  reminders: ['reminders'] as const,
+  staff: ['staff'] as const,
+  reports: ['reports'] as const,
+  settings: ['settings'] as const,
+  ortho: ['ortho'] as const,
+  lab: ['lab'] as const,
+  branches: ['branches'] as const,
+  documents: ['documents'] as const,
+  waitlist: ['waitlist'] as const,
+  online: ['online'] as const,
+} as const;

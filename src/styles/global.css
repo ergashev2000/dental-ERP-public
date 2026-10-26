@@ -1,0 +1,117 @@
+@layer theme, base, antd, components, utilities;
+@import "tailwindcss";
+@import "./variables.css";
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--color-canvas);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+.tabular-nums,
+.ant-table,
+.ant-statistic-content {
+  font-variant-numeric: tabular-nums;
+}
+
+h1, h2, h3, h4 {
+  letter-spacing: -0.01em;
+  font-weight: 400;
+}
+
+/* Lime Health: har bir interaktiv elementda 2px ink fokus halqasi, 2px oraliq bilan */
+:where(a, button, [role='button'], [role='tab'], [tabindex]):focus-visible {
+  outline: 2px solid var(--color-focus);
+  outline-offset: 2px;
+}
+
+/* Lime CTA: <Button type="primary" className="btn-lime">. Ekranda bittadan ko'p emas */
+.ant-btn.btn-lime:not(:disabled) {
+  background: var(--color-lime);
+  color: var(--color-on-lime);
+}
+.ant-btn.btn-lime:not(:disabled):hover,
+.ant-btn.btn-lime:not(:disabled):active {
+  background: var(--color-lime-press);
+  color: var(--color-on-lime);
+}
+.ant-btn:not(:disabled):active {
+  transform: scale(0.96);
+}
+@media (prefers-reduced-motion: reduce) {
+  .ant-btn:not(:disabled):active { transform: none; }
+}
+
+/* Qora sidebar: antd aktiv guruh sarlavhasini lime pill matni rangiga (qora) bog'laydi — oq bo'lsin */
+.ant-menu-dark .ant-menu-submenu-selected > .ant-menu-submenu-title {
+  color: var(--color-on-dark);
+}
+
+/* Yig'ilgan sidebar: guruh sarlavhalari kesilib qolmasin — ingichka ajratgich chiziq */
+.ant-menu-dark.ant-menu-inline-collapsed .ant-menu-item-group-title {
+  height: 1px;
+  margin: 12px 20px;
+  padding: 0;
+  overflow: hidden;
+  font-size: 0;
+  background: var(--color-on-dark-subtle);
+}
+.ant-menu-dark.ant-menu-inline-collapsed > .ant-menu-item-group:first-child > .ant-menu-item-group-title {
+  display: none;
+}
+
+/* Sidebar ichidagi scroll */
+.sidebar-scroll::-webkit-scrollbar { width: 0; }
+
+/* Qo'ng'iroq ketmoqda — yagona ruxsat etilgan uzluksiz animatsiya */
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.35; transform: scale(0.8); }
+}
+.pulse-dot {
+  animation: pulse-dot 1.5s ease-out infinite;
+}
+
+/* Odontogramma */
+.tooth-cell { transition: background-color 0.15s ease-out; }
+.tooth-cell:focus-visible { outline: 2px solid var(--color-focus); outline-offset: 2px; }
+.tooth-cell .tooth-outline { transition: stroke 0.15s ease-out; }
+.tooth-cell:hover .tooth-outline { stroke: var(--color-ink); }
+
+/* Zich jadval (<Table size="middle">): sarlavha va hujayra bir qatorda; uzun matn — `truncate` + `title` */
+.ant-table-wrapper .ant-table-middle .ant-table-thead > tr > th,
+.ant-table-wrapper .ant-table-middle .ant-table-tbody > tr > td {
+  white-space: nowrap;
+}
+
+/* Kalendar */
+.calendar-slot:hover { background: var(--color-primary-50); }
+
+/* Print */
+#print-root { display: none; }
+
+@media print {
+  @page { margin: 12mm; }
+  @page receipt { size: 80mm auto; margin: 3mm; }
+  body { background: var(--color-surface) !important; }
+  * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+
+  /* usePrint(): alohida varaq (chek, reja, odontogramma) */
+  body.print-portal #root { display: none !important; }
+  body.print-portal #print-root { display: block !important; }
+
+  /* Oddiy window.print(): sahifa kontenti, navigatsiyasiz */
+  body:not(.print-portal) .ant-layout-sider,
+  body:not(.print-portal) .ant-layout-header,
+  body:not(.print-portal) .no-print { display: none !important; }
+
+  .print-receipt { page: receipt; width: 74mm; font-size: 11px; }
+}
